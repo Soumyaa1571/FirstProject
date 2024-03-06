@@ -1,0 +1,36 @@
+h1{
+color:black;
+/* font-family: 'Times New Roman', Times, serif;
+ */
+font-size: 5rem;
+font-weight: 200;
+}
+h5{
+    /* text-align: center; */
+    margin-left: 4rem;
+    font-size: 3rem;
+}
+.box{
+    /* text-align: center; */
+    margin-left: 4rem;
+    color:cyan;
+    font-size: 2rem;
+}
+/* h3{
+    font-size:2rem;
+    margin-bottom:1g;
+    line-height:1.5;
+    /* color:blueviolet; */
+    /* color:azure;
+    margin-left: 4 rem;
+     */
+    
+
+ 
+.ques
+{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    /* margin-left: 4rem; */
+    color:aliceblue;
+}
