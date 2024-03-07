@@ -11,8 +11,9 @@ const Test = require("../model/test");
 const Announcement = require("../model/Announcement");
 
 // createtoken function
-const createToken = (_id) => {
-  return jwt.sign({ _id }, process.env.SECRET, { expiresIn: "3d" });
+const createToken = async (_id) => {
+  console.log(process.env.SECRET_KEY);
+  return await jwt.sign({ _id }, process.env.SECRET_KEY, { expiresIn: "3d" });
 };
 
 router.get("/", (req, res) => {
@@ -47,7 +48,7 @@ router.post("/register", async (req, res) => {
 
       await user.save();
       //  create a token
-      const token = createToken(user._id);
+      const token = await createToken(user._id);
 
       // res.status(201).json({ message: "user registered successfuly "  });
       res.status(200).json({ email, token });

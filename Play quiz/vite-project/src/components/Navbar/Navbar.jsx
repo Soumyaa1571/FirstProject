@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 
 import "./Navbar.css";
 
-export const Navbar = () => {
+export const Navbar = ({ tokenState }) => {
   return (
     <nav>
       <Link to="/" className="title">
@@ -29,10 +29,15 @@ export const Navbar = () => {
         <li>
           <NavLink to="/contact">Contact Us</NavLink>
         </li>
-
-        <li>
-          <NavLink to="/login">Login</NavLink>
-        </li>
+        {tokenState.token ? (
+          <li>
+            <NavLink to="/logout">Logout</NavLink>
+          </li>
+        ) : (
+          <li>
+            <NavLink to="/login">Login</NavLink>
+          </li>
+        )}
         <li>
           <NavLink to="/result">Result</NavLink>
         </li>

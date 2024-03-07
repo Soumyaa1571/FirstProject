@@ -20,18 +20,25 @@ import Bform from "./components/Bform/Bform";
 import Result from "./components/pages/Result/Result";
 import Sheet from "./components/pages/Sheet/Sheet";
 import Aform from "./components/Aform/Aform";
+import { useState } from "react";
 
 function App() {
+  const token = localStorage.getItem('token');
+  const email = localStorage.getItem('email');
+  const [tokenState, setTokenState] = useState({
+    token: token,
+    email: email
+  })
   return (
     <div>
-      <Navbar />
+      <Navbar tokenState={tokenState}/>
 
       <Routes>
         <Route path="/about" element={<About />} />
         {/* <Route path="/announcements" element={<Services />} /> */}
         {/* <Route path="/home" element={<Home />} /> */}
         <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={token?<Quizes/>:<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/quizes" element={<Quizes />} />
         <Route path="/Announcements" element={<Announcements />} />

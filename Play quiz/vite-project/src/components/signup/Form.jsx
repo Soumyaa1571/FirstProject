@@ -39,7 +39,6 @@ export default function Form() {
           ) {
             if (userData.phone.length === 10) {
               setError(false);
-              console.table(userData);
 
               const res = await fetch("http://localhost:5000/register", {
                 method: "POST",
@@ -49,9 +48,11 @@ export default function Form() {
                   "content-type": "application/json",
                 },
               });
-              console.log(res);
               if (res.ok) {
                 console.log("Response saved successfully!");
+                const obj = await res.json()
+                localStorage.setItem("token", obj.token);
+                localStorage.setItem("email", obj.email);
               }
             } else {
               setErrorName("Phone no. is not correct");

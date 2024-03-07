@@ -1,7 +1,7 @@
 import React from "react";
 // import Form from "../../components/login/Form";
 
-import Form from "../../Login/Form";
+import Form from "../../login/Form.jsx";
 
 import "./Login.css";
 export default function Login () {
