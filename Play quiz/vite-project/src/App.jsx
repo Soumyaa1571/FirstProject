@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Navbar } from "./components/Navbar/Navbar";
 // import Home from "./components/pages/Home/Home";
@@ -20,40 +20,36 @@ import Bform from "./components/Bform/Bform";
 import Result from "./components/pages/Result/Result";
 import Sheet from "./components/pages/Sheet/Sheet";
 import Aform from "./components/Aform/Aform";
-import { AuthContextProvider } from "./components/AuthContext/AuthContext";
 
 function App() {
-  const authCtx = useContext(AuthContext);
   return (
     <div>
-      <Router>
-        <Navbar />
+      <Navbar />
 
-        <Routes>
-          <Route path="/about" element={<About />} />
-          {/* <Route path="/announcements" element={<Services />} /> */}
-          {/* <Route path="/home" element={<Home />} /> */}
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/quizes" element={<Quizes />} />
-          <Route path="/Announcements" element={<Announcements />} />
-          <Route path="/Questions" element={<Question />} />
-          <Route path="/Test" element={<Test />} />
-          <Route path="/Test2" element={<Test2 />} />
-          <Route path="/Test3" element={<Test3 />} />
-          <Route path="/Finish" element={<Finish />} />
-          <Route path="/exam" element={<Bform />} />
-          <Route path="/result" element={<Result />} />
-          <Route path="/Sheet" element={<Sheet />} />
-          <Route path="/getSheet" element={<Aform />} />
+      <Routes>
+        <Route path="/about" element={<About />} />
+        {/* <Route path="/announcements" element={<Services />} /> */}
+        {/* <Route path="/home" element={<Home />} /> */}
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/quizes" element={<Quizes />} />
+        <Route path="/Announcements" element={<Announcements />} />
+        <Route path="/Questions" element={<Question />} />
+        <Route path="/Test" element={<Test />} />
+        <Route path="/Test2" element={<Test2 />} />
+        <Route path="/Test3" element={<Test3 />} />
+        <Route path="/Finish" element={<Finish />} />
+        <Route path="/exam" element={<Bform />} />
+        <Route path="/result" element={<Result />} />
+        <Route path="/Sheet" element={<Sheet />} />
+        <Route path="/getSheet" element={<Aform />} />
 
-          {/* <Route path="/answer" element={<Answer />} /> */}
+        {/* <Route path="/answer" element={<Answer />} /> */}
 
-          {/* <Route path="/quizes" element={<Quizes />} /> */}
-        </Routes>
-        {/* <Footer /> */}
-      </Router>
+        {/* <Route path="/quizes" element={<Quizes />} /> */}
+      </Routes>
+      {/* <Footer /> */}
     </div>
   );
 }

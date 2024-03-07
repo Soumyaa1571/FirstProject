@@ -50,6 +50,9 @@ export default function Form() {
                 },
               });
               console.log(res);
+              if (res.ok) {
+                console.log("Response saved successfully!");
+              }
             } else {
               setErrorName("Phone no. is not correct");
               setError(true);

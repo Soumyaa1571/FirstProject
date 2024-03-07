@@ -1,13 +1,11 @@
 import React from "react";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Form.css";
-import AuthContext from "./../AuthContext/AuthContext";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 export default function Form() {
-  const navigate = useNavigate();
-  const authCtx = useContext(AuthContext);
+  // const redirect = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -18,18 +16,7 @@ export default function Form() {
     setPassword(e.target.value);
   };
   const submit = () => {
-    // console.log(password, email);
-    // Call the login function from the authentication context
-    authCtx
-      .login(email, password)
-      .then(() => {
-        // Redirect to a different page after successful login
-        navigate("/quizes");
-      })
-      .catch((error) => {
-        // Handle login error, display error message, etc.
-        console.error("Login failed:", error);
-      });
+    console.log(password, email);
   };
   return (
     <div className="loginForm">
